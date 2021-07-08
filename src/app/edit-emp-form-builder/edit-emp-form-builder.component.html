@@ -1,0 +1,44 @@
+<form [formGroup]="empForm">
+	<div class="block">
+		<strong>Edit Employee</strong><br><br>
+		<strong>Name</strong><br> 
+		<input type="text" formControlName="name" minlength="2" maxlength="10"><br><br>
+		
+		<strong>Salary</strong><br> 
+		<input type="number" formControlName="salary"><br><br>
+		
+		<strong>Is Pertmanent or not?</strong><br>
+		<input type="radio" [value]="true" formControlName="permanent">Yes
+		<input type="radio" [value]="false" formControlName="permanent">No
+
+		<div>
+			<h3>Department</h3>
+			<select formControlName="department">
+			<option *ngFor="let department of departments"
+			[ngValue]="department"
+			[selected]="department.id === emp.department.id">
+			{{department.name}}
+			</option>
+			</select>
+
+		</div>
+
+		<div>
+			<h3>Add Skill</h3> 
+
+			<div *ngFor="let skill of skills.controls; let i=index">
+				Skill {{ i+1 }}: <br>
+				<input type="text" [formControlName]="i">
+			</div>
+
+			<button (click)="addSkill()">Add Skill</button>
+			
+		</div>
+
+		<br><br>
+
+		<button type="submit" (click)="onSubmit()" [disabled]="!empForm.valid"> Save </button>
+
+	</div>
+
+</form>

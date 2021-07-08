@@ -1,0 +1,7 @@
+<h3>Employee List</h3>
+
+<div>
+	Search:<input type="text" name="search" [(ngModel)]="searchKey" (keyup)="search($event)" placeholder="Find by name">
+</div>
+<br><br>
+<app-employee-info [employees]="filteredEmployees"></app-employee-info>

@@ -1,0 +1,7 @@
+<div>
+	<div class="container" *ngFor="let emp of employees">
+		<strong>{{emp.name}}</strong><br>
+		{{ emp.salary | currency: 'INR' }}<br>
+		<a [routerLink]="['/edit-emp-reactive',emp.id]">Edit</a>
+	</div>
+</div>

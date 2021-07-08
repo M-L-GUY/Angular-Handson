@@ -1,0 +1,8 @@
+<form>
+	Username: <input type="text" name="username" id="username" [(ngModel)]="username" required>{{ username }}<br>
+	Password: <input type="password" name="password" id="password" [(ngModel)]="password" required><br>
+	<button (click)="login()">Submit</button><br><br>
+
+	{{ msg }}
+
+</form>

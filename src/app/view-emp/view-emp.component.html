@@ -1,0 +1,20 @@
+<h1>Employee Details</h1>
+<p><span style="font-weight:bold;">ID:</span> {{ emp.id }}</p>
+<p><span style="font-weight:bold;">Name:</span> {{ emp.name }}</p>
+<p><span style="font-weight:bold;">Salary:</span> {{ emp.salary | currency:'₹'}}</p>
+<p *ngIf="emp.permanent"><span style="font-weight:bold;">Permanent:</span> Yes</p>
+<p><span style="font-weight:bold;">Department Id:</span> {{ emp.department.id }}</p>
+<p id="departmentName"><span style="font-weight:bold;">Department Name:</span> {{ emp.department.name }}</p>
+<p><span style="font-weight:bold;">Skills</span></p>
+<table>
+	<tr>
+		<th>Skill Id</th>
+		<th>Skill Name</th>
+	</tr>
+	<tr *ngFor="let skill of emp.skill">
+		<td>{{ skill.id }}</td>
+		<td>{{ skill.name }}</td>
+	</tr>
+</table>
+
+<p><span style="font-weight:bold;">Date of Birth:</span>{{ emp.dateOfBirth | date }}</p>
